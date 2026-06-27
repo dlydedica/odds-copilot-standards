@@ -2,7 +2,7 @@
 
 Библиотека агентов и скилов для GitHub Copilot.
 
-**Проекты:** [line-game](https://github.com/dlydedica/odds_project) · [parser](https://github.com/dlydedica/parser_bet)
+**Проекты:** [line-game](https://github.com/dlydedica/odds_project) · [parser](https://github.com/dlydedica/parser_bet) · [odds_project_resource](https://github.com/dlydedica/odds_project_resource)
 
 ---
 
@@ -21,10 +21,20 @@
 │   │   ├── skills/                          # Flutter-скилы: SDUi, виджеты, темизация...
 │   │   └── instructions/
 │   │
-│   └── parser/                              # Специфика parser (парсеры событий)
+│   ├── parser/                              # Специфика parser (парсеры событий)
+│   │   ├── agents/
+│   │   ├── skills/                          # Парсер-скилы: деплой, smoke-тесты...
+│   │   └── instructions/
+│   │
+│   └── odds_project_resource/               # Специфика odds_project_resource (SDUI JSON)
 │       ├── agents/
-│       ├── skills/                          # Парсер-скилы: деплой, smoke-тесты...
+│       │   └── sdui-ui-agent.agent.md       # SDUI UI/UX Agent
+│       ├── skills/
+│       │   ├── sdui-deployment/             # Деплой SDUI ресурсов
+│       │   ├── sdui-json-schema/            # SDUI JSON формат и виджеты
+│       │   └── stac-framework/              # Stac SDK (виджеты, парсеры, рендеринг)
 │       └── instructions/
+│           └── copilot-instructions.md
 │
 ├── shared/                                  # Общие конфиги (gitignore, editorconfig...)
 ├── scripts/                                 # Скрипты синхронизации
@@ -61,6 +71,8 @@ git add .github/standards && git commit -m "sync: обновление copilot-s
 | `pm-`* | Project management | `pm-progress` |
 | `qa-`* | Quality assurance | `qa-test-strategy` |
 | `docker-`* | Docker специфика | `docker-deploy` (parser) |
+| `sdui-`* | SDUI ресурсы (odds_project_resource) | `sdui-deployment` |
+| `stac-`* | Stac Framework | `stac-framework` |
 
 ## Добавление нового скила
 
